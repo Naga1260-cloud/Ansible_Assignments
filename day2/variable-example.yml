@@ -1,0 +1,13 @@
+---
+  - name: Install package and variables
+    hosts: local
+    become: yes
+    
+    vars:
+      package_name: tree
+
+    tasks:
+      - name: install package
+        apt: 
+          name: "{{ package_name }}"  
+          state: present 

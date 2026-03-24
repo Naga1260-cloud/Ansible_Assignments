@@ -12,4 +12,11 @@ ansible -i inventory.ini local -m command -a "sudo apt remove tree -y"
 all for all hosts
 local for localhosts
 web for webservers
+ inventory.ini = where
+ playbook = what
+ modules = how
 
+
+ansible web -m setup : here setup is the module which gives ansible setup state
+
+web :targeted hosts
