@@ -1,0 +1,10 @@
+---
+  - name: install curl
+    hosts: web
+    become: yes
+
+    tasks:
+       - name: Install curl
+         apt:
+          name: curl
+          state: absent

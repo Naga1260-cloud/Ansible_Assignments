@@ -1,0 +1,21 @@
+---
+  - name: Setup webserver
+    hosts: local,web
+    become: yes
+
+    tasks:
+      - name: Install nginx
+        apt:
+          name: nginx
+          state: present
+
+      - name: Create custom page
+        copy:
+          content: "<h1> hello devops </h1>"
+          dest: /var/www/html/index.html
+
+      - name: Restarts nginx
+        service:
+          name: nginx
+          state: restarted      
+

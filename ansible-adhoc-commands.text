@@ -1,0 +1,15 @@
+
+add-user  : user
+create-file : copy
+start or stop service : service
+install packages: apt
+uninstall packages: remove
+localhost ansible_connection=local
+ansible -i inventory.ini local -m command -a "sudo apt remove tree -y"
+
+-m for modules
+-i for inventory
+all for all hosts
+local for localhosts
+web for webservers
+

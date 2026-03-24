@@ -1,0 +1,10 @@
+---
+  - name: create user
+    hosts: local,web
+    become: yes
+
+    tasks:
+      - name: add user
+        user:
+          name: devops-user
+          state: present
