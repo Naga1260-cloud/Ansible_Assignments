@@ -1,0 +1,33 @@
+---
+- name: Complete server setup
+  hosts: local,web
+  become: yes
+
+  vars:
+    packages:
+      - nginx
+      - git
+    username: devops_user
+
+  tasks:
+    - name: Install packages
+      apt:
+       name: "{{ item }} "
+       state: present
+      loop: "{{ packages }}"
+
+
+    - name: Create user
+      user:
+        name: "{{ username }}"
+        state: present
+
+    - name: Deploy webpage
+      template:
+        src: templates/index.j2
+        dest: /var/www/html/index.html
+
+    - name: Restart nginx
+      service:
+        name: nginx
+        state: restarted     

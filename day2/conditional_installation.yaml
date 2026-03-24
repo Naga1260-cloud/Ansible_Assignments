@@ -1,0 +1,15 @@
+---
+- name: install nginx only on ubuntu
+  hosts: local,web
+  become: yes
+  tasks:
+     - name: install nginx
+       apt: 
+        name: nginx
+        state: present
+       when: ansible_distribution == "Ubuntu"
+     - name: Install nginx
+       yum:
+         name: nginx
+         state: present
+       when: ansible_distribution == "Amazon" 

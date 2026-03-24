@@ -1,0 +1,25 @@
+---
+- name: install multiple packages
+  hosts: local,web
+  become: yes
+
+  tasks:
+    - name: install packages
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - curl
+        - git
+        - nginx 
+      when: ansible_distribution == "Ubuntu"
+  
+    - name: install packages
+      yum:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - vim
+        - git
+        - nginx
+      when: ansible_distribution == "Amazon" 
