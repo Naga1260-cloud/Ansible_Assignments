@@ -1,0 +1,65 @@
+Installing Ansible on AWS
+
+1.Ensure Python is installed on both the machines i.e., Master and Slave.
+By default AWS Ubuntu images have Python installed.
+
+sudo apt-get install python3
+
+2.Enable keyless SSH access between Ansible Master and Slave.
+
+ssh-keygen -t rsa
+
+3.Once done print id_rsa.pub file
+
+sudo cat ./.ssh/id_rsa.pub
+
+4. Copy the output of this file and paste it in the slave machine’s
+authorized_keys file.
+
+sudo vi ./.ssh/authorized_keys
+
+paste the public key of ansible-master node
+
+5.Keyless access has now been configured between your Ansible master and
+slave. You can verify by doing a SSH from your master to your slave and you
+should be freely able to do so.
+
+in master-node
+ssh ubuntu@slavenode-private-id address 
+
+With this, we  have now successfully configured the pre-requisites.ie installing python and ssh
+
+
+6.Installing Ansible on Master:
+
+Ubuntu provides Ansible packages through a Personal Package Archive (PPA) that contains more recent versions than the standard repositories.
+
+Ubuntu builds are available in a PPA here.
+
+Configure the PPA on your system and install Ansible:
+
+$ sudo apt-get update -y
+$ sudo apt upgrade -y
+$ sudo apt install software-properties-common
+$ sudo add-apt-repository --yes --update ppa:ansible/ansible
+
+7. Next, configure the slave by creating the hosts file in the Master. T o edit
+the file, pass the following command:
+
+sudo vi /etc/ansible/hosts
+
+Once inside, enter the following syntax to add a slave. In this syntax, servers is
+the group and server1 is the slave machine’s name. 
+
+[servers]
+server1 ansible-host1= <slave-private-ip-address>
+
+
+8.Finally, you can test the Ansible Master-Slave connection by passing the
+following command
+
+$ ansible -m ping all
+
+ 
+
+
