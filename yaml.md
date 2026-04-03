@@ -9,15 +9,17 @@ YAML is particularly prevalent in the context of configuration management tools 
 
 Basics of YAML
 
-Key-Value Pairs
+**Key-Value Pairs: **
 In YAML, data is represented using key-value pairs. The key and value are **separated by a colon, and the pairs are defined with spaces**:
+
 city: Varanasi
 month: May
 year: 2022
 food: Curry
 
-Arrays/Lists
+**Arrays/Lists**: 
 Arrays or lists in YAML are denoted by a **hyphen (-) followed by a space.** This indicates the beginning of an element in the list:
+
 city:
   - Varanasi
   - Lucknow
@@ -29,9 +31,10 @@ food:
   - Daal
 
 
-Dictionaries/Maps
+**Dictionaries/Maps** : 
 **Dictionaries or maps in YAML are represented by key-value pairs grouped under an item.
 The indentation is crucial, and an equal number of spaces must be maintained for each property:**
+
 curry:
   calories: 100
   vitamins: 20
@@ -42,8 +45,9 @@ banana:
   vitamins: 50
   carbs: 20
 
-Dictionary of Lists
+**Dictionary of Lists**: 
 **Combining dictionaries and lists provides flexibility in structuring data:**
+
 city:
   - newdelhi:
       population: 100
@@ -54,7 +58,8 @@ city:
       male: 55
       female: 45
 
-Dictionary vs. List vs. List of Dictionary
+**Dictionary vs. List vs. List of Dictionary**
+
 Dictionary (Map):
 
 Used to store different properties of a single object.
@@ -70,6 +75,7 @@ Allows for a structured representation of multiple items.
 
 
 YAML Syntax and Formatting
+
 **YAML is an unordered collection (for dictionaries/maps) and an ordered collection (for arrays/lists).
 The space or indentation is crucial in YAML and defines the structure.
 Consistent indentation is required for readability and proper interpretation.**
