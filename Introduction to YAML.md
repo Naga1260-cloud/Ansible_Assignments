@@ -39,11 +39,13 @@ food:
 The indentation is crucial, and an equal number of spaces must be maintained for each property:**
 
 curry:
+
   calories: 100
   vitamins: 20
   carbs: 20
 
 banana:
+
   calories: 70
   vitamins: 50
   carbs: 20
