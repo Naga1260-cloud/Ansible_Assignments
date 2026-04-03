@@ -13,8 +13,11 @@ Basics of YAML
 In YAML, data is represented using key-value pairs. The key and value are **separated by a colon, and the pairs are defined with spaces**:
 
 city: Varanasi
+
 month: May
+
 year: 2022
+
 food: Curry
 
 **Arrays/Lists**: 
